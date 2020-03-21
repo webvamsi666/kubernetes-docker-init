@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: python-demoapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-demoapp
+  template:
+    metadata:
+      labels:
+        app: python-demoapp
+    spec:
+      containers:
+      - name: python-demoapp
+        image: bencuk/python-demoapp
+        ports:
+        - containerPort: 5000

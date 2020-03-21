@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: python-demoapp-svc
+spec:
+  # type: LoadBalancer
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    nodePort: 30039
+    targetPort: 5000
+  selector:
+    app: python-demoapp
+  
